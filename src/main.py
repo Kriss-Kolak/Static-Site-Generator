@@ -1,9 +1,8 @@
-from textnode import TextNode, TextType
+from build_public import build_public
 
 
 def main():
-    node = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
-    print(node)
 
+    build_public()
 
 main()
