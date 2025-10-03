@@ -12,8 +12,12 @@ class BlockType(Enum):
     OLIST = "ordered_list"
     ULIST = "unordered_list"
 
-
-
+def extract_title(markdown: str):
+    for line in markdown.split("\n"):
+        if line.startswith("# "):
+            splited = line.split('# ', 1)
+            return splited[1]
+    raise Exception('Title has not been found')
 
 def heading_helper(block: str) -> tuple[str, str]:
     if block.startswith("# "):
