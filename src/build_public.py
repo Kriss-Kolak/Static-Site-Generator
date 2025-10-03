@@ -20,18 +20,17 @@ def clone_folder_to_folder(src_folder, dist_folder):
 
 
 
-def build_public():
+def build(build_path, static_path):
 
-    public_path = 'public'
-    static_path = 'static'
+
     #HARD RESET PUBLIC
-    if os.path.exists(public_path):
-        shutil.rmtree(public_path)
-    if not os.path.exists(public_path):
-        os.mkdir(public_path)
+    if os.path.exists(build_path):
+        shutil.rmtree(build_path)
+    if not os.path.exists(build_path):
+        os.mkdir(build_path)
 
-    clone_folder_to_folder(static_path, public_path)
+    clone_folder_to_folder(static_path, build_path)
 
 
 if __name__ == "__main__":
-    build_public()
+    build()
